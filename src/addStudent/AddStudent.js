@@ -4,23 +4,23 @@ export default function AddStudent(props) {
   const [id, setId] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  let schema = yup.object.shape({
-    name: yup.string().required(),
-    email: yup.string().email().required(),
-    id: yup.number().required(),
-  });
+  // let schema = yup.object.shape({
+  //   name: yup.string().required(),
+  //   email: yup.string().email().required(),
+  //   id: yup.number().required(),
+  // });
   async function AddHandler() {
     let data = {
       name: name,
-      id: id,
       email: email,
+      id: id,
     };
-    try {
-      let result = await schema.validate(data);
-      props.onAddHandler(data);
-    } catch (err) {
-      console.log(err);
-    }
+    props.onAddHandler(data);
+    // try {
+    //   let result = await schema.validate(data);
+    // } catch (err) {
+    //   console.log(err);
+    // }
   }
 
   return (

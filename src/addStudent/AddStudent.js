@@ -1,47 +1,61 @@
 import { useState } from "react";
-
+import * as yup from "yup";
 export default function AddStudent(props) {
-  const [names, setNames] = useState();
-  const [email, setEmail] = useState();
-  const [RollNo, setRollNo] = useState();
-  const onClickHandler = () => {
-    console.log("Name: ", names);
-    console.log("Email: ", email);
-    console.log("Roll No: ", RollNo);
+  const [id, setId] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  let schema = yup.object.shape({
+    name: yup.string().required(),
+    email: yup.string().email().required(),
+    id: yup.number().required(),
+  });
+  async function AddHandler() {
     let data = {
-      name: names,
+      name: name,
+      id: id,
       email: email,
-      rollNo: RollNo,
     };
-  };
-  props.onClickHandler(data);
+    try {
+      let result = await schema.validate(data);
+      props.onAddHandler(data);
+    } catch (err) {
+      console.log(err);
+    }
+  }
 
   return (
     <div
-      style={{ backgroundColor: "darkblue", color: "white", padding: "1rem" }}
+      style={{
+        backgroundColor: "darkblue",
+        padding: ".4rem",
+        display: "inline-block",
+      }}
     >
-      <h1> Heloo I am here</h1>
       <input
-        onChange={(e) => setNames(e.target.value)}
+        onChange={(e) => setId(e.target.value)}
+        style={{ padding: ".4rem" }}
         type="text"
+        placeholder="Enter your ID"
+      ></input>
+      <input
+        onChange={(e) => setName(e.target.value)}
+        style={{ padding: ".4rem" }}
+        type="text "
         placeholder="Enter your name"
       ></input>
       <input
         onChange={(e) => setEmail(e.target.value)}
-        type="text"
+        style={{ padding: ".4rem" }}
+        type="text "
         placeholder="Enter your Email"
       ></input>
-      <input
-        onChange={(e) => setRollNo(e.target.value)}
-        type="text"
-        placeholder="Enter your RollNO"
-      ></input>
 
+      <br></br>
       <button
-        onClick={onClickHandler}
-        style={{ backgroundColor: "darkgreen", color: "white" }}
+        onClick={AddHandler}
+        style={{ padding: ".4rem", marginTop: ".5rem", fontWeight: "800" }}
       >
-        Submit
+        AddStudent
       </button>
     </div>
   );

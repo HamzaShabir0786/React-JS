@@ -46,7 +46,7 @@ export default function Home() {
           <th>ID</th>
           <th>Name</th>
           <th>Email</th>
-          <th>Delete</th>
+          <th>Delete / Update</th>
         </tr>
 
         {studentsData.map((item) => {

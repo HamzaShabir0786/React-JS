@@ -21,6 +21,18 @@ export default function TableItem(props) {
         >
           Delete
         </button>
+        <button
+          style={{
+            backgroundColor: "black",
+            color: "white",
+            padding: "1rem",
+            fontSize: "1rem",
+            cursor: "pointer",
+            // borderRadius: "0rem",
+          }}
+        >
+          Update
+        </button>
       </tr>
     </>
   );

@@ -40,7 +40,7 @@ export default function Home() {
         border={9}
         cellPadding={14}
         cellSpacing={2}
-        style={{ textAlign: "center", fontFamily: "sans-serif" }}
+        className="text-center font-sans bg-pink-200 rounded-lg ml-4 mt-3  w-[30rem] "
       >
         <tr>
           <th>ID</th>

@@ -10,27 +10,11 @@ export default function TableItem(props) {
           onClick={() => {
             props.onClickHandler(props.prop.id);
           }}
-          style={{
-            backgroundColor: "black",
-            color: "white",
-            padding: "1rem",
-            fontSize: "1rem",
-            cursor: "pointer",
-            // borderRadius: "0rem",
-          }}
+          className="bg-pink-300 font-bold p-2 rounded-md hover:bg-pink-500"
         >
           Delete
         </button>
-        <button
-          style={{
-            backgroundColor: "black",
-            color: "white",
-            padding: "1rem",
-            fontSize: "1rem",
-            cursor: "pointer",
-            // borderRadius: "0rem",
-          }}
-        >
+        <button className="bg-pink-300 font-bold p-2 rounded-md  hover:bg-pink-500">
           Update
         </button>
       </tr>

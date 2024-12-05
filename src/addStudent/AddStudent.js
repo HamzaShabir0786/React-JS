@@ -26,7 +26,7 @@ export default function AddStudent(props) {
   return (
     <div
       style={{
-        backgroundColor: "darkblue",
+        backgroundColor: "gray",
         padding: ".4rem",
         display: "inline-block",
       }}
@@ -53,7 +53,7 @@ export default function AddStudent(props) {
       <br></br>
       <button
         onClick={AddHandler}
-        style={{ padding: ".4rem", marginTop: ".5rem", fontWeight: "800" }}
+        className="font-bold mt-4 bg-pink-300 p-2 rounded-md hover:bg-pink-500"
       >
         AddStudent
       </button>

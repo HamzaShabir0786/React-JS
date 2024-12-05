@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer>
-      <p>Copyright © 2021 My Website Footer</p>
+      <h1 className="bg-red-500 p-4 text-center font-bold">Footer here</h1>
     </footer>
   );
 }
